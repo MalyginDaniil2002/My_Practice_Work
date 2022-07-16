@@ -33,7 +33,7 @@ namespace My_PracticeWork.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> Get(int id)
         {
-            Person user = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
+            Person? user = await db.Users.FirstOrDefaultAsync(x => x.Id == id);
             if (user == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@ namespace My_PracticeWork.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> Delete(int id)
         {
-            Person user = db.Users.FirstOrDefault(x => x.Id == id);
+            Person? user = db.Users.FirstOrDefault(x => x.Id == id);
             if (user == null)
             {
                 return NotFound();
