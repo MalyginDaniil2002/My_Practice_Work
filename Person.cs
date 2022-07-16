@@ -1,4 +1,4 @@
-﻿namespace My_PracticeWork.Models
+﻿namespace My_Practice_Work.Models
 {
     public class Person
     {

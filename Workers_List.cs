@@ -2,10 +2,10 @@
 using My_Practice_Work.Models;
 namespace My_Practice_Work.Data
 {
-    public class Users_Work : DbContext
+    public class Workers_List: DbContext
     {
-        public DbSet<Person> Users { get; set; } = null!;
-        public Users_Work(DbContextOptions<Users_Work> options) : base(options)
+        public DbSet<Worker> Workers { get; set; } = null!;
+        public Workers_List(DbContextOptions<Workers_List> options) : base(options)
         {
             Database.EnsureCreated();
         }
