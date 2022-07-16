@@ -1,4 +1,5 @@
 var builder = WebApplication.CreateBuilder();
+builder.Services.AddMvc();
 var app = builder.Build();
 app.MapControllerRoute(
         name: "default",
