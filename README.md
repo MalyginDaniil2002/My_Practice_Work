@@ -1,4 +1,4 @@
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/860a20dc-b66b-4896-acdb-227c04ce5515/Untitled.png)
+## REST сервис
 
 ## Описание
 Веб сервис для взаимодействия с базой данных.
