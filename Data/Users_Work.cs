@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using My_Practice_Work.Models;
 namespace My_Practice_Work.Data
 {
@@ -11,7 +11,7 @@ namespace My_Practice_Work.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=My_Practice;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=My_Practice_Work;Trusted_Connection=True;");
         }
     }
 }
