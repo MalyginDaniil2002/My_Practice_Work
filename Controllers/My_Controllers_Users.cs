@@ -2,7 +2,7 @@ using My_Practice_Work.Data;
 using My_Practice_Work.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-namespace My_PracticeWork.Controllers
+namespace My_Practice_Work.Controllers
 {
     [ApiController]
     [Route("[controller]")]
