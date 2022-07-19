@@ -16,7 +16,6 @@ namespace My_Practice_Work.Controllers
             {
                 db.Workers.Add(new Worker
                 {
-
                 });
                 db.SaveChanges();
             }
