@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
 using My_Practice_Work.Data;
 using My_Practice_Work.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace My_Practice_Work.Controllers
 {
     [ApiController]
@@ -16,8 +16,7 @@ namespace My_Practice_Work.Controllers
             {
                 db.Workers.Add(new Worker
                 {
-                    Name = "Olga",
-                    Age = 40
+
                 });
                 db.SaveChanges();
             }
@@ -41,30 +40,30 @@ namespace My_Practice_Work.Controllers
             }
         }
         [HttpPost]
-        public async Task<ActionResult<Worker>> Post(Worker user)
+        public async Task<ActionResult<Worker>> Post(Worker list)
         {
-            if (user == null)
+            if (list == null)
             {
                 return BadRequest();
             }
-            db.Workers.Add(user);
+            db.Workers.Add(list);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(list);
         }
         [HttpPut]
-        public async Task<ActionResult<Worker>> Put(Worker user)
+        public async Task<ActionResult<Worker>> Put(Worker list)
         {
-            if (user == null)
+            if (list == null)
             {
                 return BadRequest();
             }
-            if (!db.Workers.Any(x => x.Id == user.Id))
+            if (!db.Workers.Any(x => x.Id == list.Id))
             {
                 return NotFound();
             }
-            db.Update(user);
+            db.Update(list);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(list);
         }
         [HttpDelete("{id}")]
         public async Task<ActionResult<Worker>> Delete(int id)
