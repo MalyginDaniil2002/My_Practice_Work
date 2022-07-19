@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
 using My_Practice_Work.Data;
 using My_Practice_Work.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 namespace My_PracticeWork.Controllers
 {
     [ApiController]
@@ -16,12 +16,6 @@ namespace My_PracticeWork.Controllers
             {
                 db.Users.Add(new Person
                 {
-                    Name = "Daniil",
-                    Surname = "Malygin",
-                    Middle_Name = "Alexandrovich",
-                    Birth_Year = 2002,
-                    Birth_Month = 3,
-                    Birth_Day = 14
                 });
                 db.SaveChanges();
             }
@@ -45,30 +39,30 @@ namespace My_PracticeWork.Controllers
             }
         }
         [HttpPost]
-        public async Task<ActionResult<Person>> Post(Person user)
+        public async Task<ActionResult<Person>> Post(Person Human)
         {
-            if (user == null)
+            if (Human == null)
             {
                 return BadRequest();
             }
-            db.Users.Add(user);
+            db.Users.Add(Human);;
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(Human);
         }
         [HttpPut]
-        public async Task<ActionResult<Person>> Put(Person user)
+        public async Task<ActionResult<Person>> Put(Person Human)
         {
-            if (user == null)
+            if (Human == null)
             {
                 return BadRequest();
             }
-            if (!db.Users.Any(x => x.Id == user.Id))
+            if (!db.Users.Any(x => x.Id == Human.Id))
             {
                 return NotFound();
             }
-            db.Update(user);
+            db.Update(Human);
             await db.SaveChangesAsync();
-            return Ok(user);
+            return Ok(Human);
         }
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> Delete(int id)
