@@ -11,7 +11,7 @@ namespace My_Practice_Work.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=My_Practice_Work;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=My_Practice_Work_Users;Trusted_Connection=True;");
         }
     }
 }
