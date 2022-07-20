@@ -8,8 +8,8 @@ namespace My_Practice_Work.Controllers
     [Route("[controller]")]
     public class My_Controllers_Workers: ControllerBase
     {
-        Workers_List db;
-        public My_Controllers_Workers(Workers_List context)
+        Users_Work db;
+        public My_Controllers_Workers(Users_Work context)
         {
             db = context;
             if (!db.Workers.Any())
