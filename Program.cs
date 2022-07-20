@@ -4,8 +4,6 @@ var builder = WebApplication.CreateBuilder();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<Users_Work>(options =>
     options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<Workers_List>(options =>
-    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
